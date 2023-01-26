@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const toggleBurgerMenu = () => {
@@ -7,8 +7,27 @@ const Navbar = () => {
     document.querySelector(".navbar-burger").classList.toggle("is-active");
   };
 
-  const logoutUser = () => {
-    console.log("logout user TBD");
+  const navigate = useNavigate();
+
+  const logoutUser = async () => {
+    let token = sessionStorage.getItem("token");
+    try {
+      let res = await fetch("http://localhost:3000/blog/logout", {
+        method: "PUT",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `bearer ${token}`,
+        },
+      });
+      let resJson = await res.json();
+      sessionStorage.removeItem("token");
+      sessionStorage.clear();
+      alert(resJson.msg);
+      navigate("/login");
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
