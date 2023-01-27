@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const Signup = () => {
   const [username, setUsername] = useState("");
@@ -104,6 +104,10 @@ const Signup = () => {
           ))}
         </ul>
       ) : null}
+      <div>
+        Already have an account? Click <Link to={"/login"}>HERE</Link> to log
+        in.
+      </div>
     </div>
   );
 };
