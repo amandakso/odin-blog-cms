@@ -7,6 +7,7 @@ import PrivateRoute from "./PrivateRoute";
 
 import Home from "./components/Home";
 import Create from "./components/Create";
+import Edit from "./components/Edit";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 
@@ -17,6 +18,10 @@ function App() {
         <Routes>
           <Route path="/" element={<PrivateRoute child={<Home />} />} />
           <Route path="/create" element={<PrivateRoute child={<Create />} />} />
+          <Route
+            path="/edit/:postid"
+            element={<PrivateRoute child={<Edit />} />}
+          />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
         </Routes>
