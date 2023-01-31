@@ -4,6 +4,40 @@ import Navbar from "./Navbar";
 
 const Home = () => {
   const [data, setData] = useState(null);
+
+  const deletePost = async (e, postid) => {
+    e.preventDefault();
+    let text = "Delete post?";
+    let token = sessionStorage.getItem("token");
+    if (!token) {
+      alert("Error with user access");
+    } else {
+      if (window.confirm(text)) {
+        try {
+          let res = await fetch(`http://localhost:3000/blog/posts/${postid}`, {
+            method: "DELETE",
+            mode: "cors",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `bearer ${token}`,
+            },
+          });
+          let resJson = await res.json();
+          if (res.status === 200) {
+            if (resJson.msg) {
+              alert(resJson.msg);
+              window.location.reload();
+            }
+          } else {
+            console.log("An error occurred");
+          }
+        } catch (err) {
+          console.log(err);
+        }
+      }
+    }
+  };
+
   useEffect(() => {
     const getPosts = async () => {
       let token = sessionStorage.getItem("token");
@@ -91,7 +125,10 @@ const Home = () => {
                   </td>
                   <td>
                     <span className="icon">
-                      <i className="mdi mdi-24px mdi-delete"></i>
+                      <i
+                        className="mdi mdi-24px mdi-delete"
+                        onClick={(e) => deletePost(e, _id)}
+                      ></i>
                     </span>
                   </td>
 
