@@ -4,10 +4,10 @@ import Navbar from "./Navbar";
 
 const Home = () => {
   const [data, setData] = useState(null);
+  console.log(data);
   useEffect(() => {
     const getPosts = async () => {
       let token = sessionStorage.getItem("token");
-      console.log(token);
       if (!token) {
         alert("Error with user access");
       } else {
@@ -21,8 +21,16 @@ const Home = () => {
             },
           });
           let resJson = await res.json();
-          setData(resJson);
-          console.log(resJson);
+          if (res.status === 200) {
+            if (resJson.error) {
+              alert(resJson.error);
+            }
+            if (resJson.data) {
+              setData(resJson.data);
+            }
+          } else {
+            console.log("error occurred");
+          }
         } catch (err) {
           console.log(err);
         }
@@ -34,6 +42,42 @@ const Home = () => {
   return (
     <div>
       <Navbar />
+      <table className="table">
+        <caption>Your Posts</caption>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Title</th>
+            <th>Content</th>
+            <th>Preview</th>
+            <th></th>
+            <th></th>
+            <th>Published?</th>
+          </tr>
+        </thead>
+        {data ? (
+          <tbody>
+            {data.map(
+              ({
+                author,
+                title,
+                content,
+                publish_date_formatted,
+                published,
+                updated,
+                updated_formatted,
+                _id,
+              }) => (
+                <tr key={_id}>
+                  <td>Test</td>
+                </tr>
+              )
+            )}
+          </tbody>
+        ) : (
+          <tbody></tbody>
+        )}
+      </table>
     </div>
   );
 };
