@@ -4,7 +4,6 @@ import Navbar from "./Navbar";
 
 const Home = () => {
   const [data, setData] = useState(null);
-  console.log(data);
   useEffect(() => {
     const getPosts = async () => {
       let token = sessionStorage.getItem("token");
@@ -42,14 +41,14 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      <table className="table">
+      <table className="table is-striped">
         <caption>Your Posts</caption>
         <thead>
           <tr>
             <th>Date</th>
             <th>Title</th>
             <th>Content</th>
-            <th>Preview</th>
+            <th></th>
             <th></th>
             <th></th>
             <th>Published?</th>
@@ -69,7 +68,22 @@ const Home = () => {
                 _id,
               }) => (
                 <tr key={_id}>
-                  <td>Test</td>
+                  <td>{publish_date_formatted}</td>
+                  {title.length > 25 ? (
+                    <td>{title.slice(0, 25)}...</td>
+                  ) : (
+                    <td>{title}</td>
+                  )}
+                  {content.length > 25 ? (
+                    <td>{content.slice(0, 25)}...</td>
+                  ) : (
+                    <td>{content}</td>
+                  )}
+                  <td>Preview</td>
+                  <td>Edit</td>
+                  <td>Delete</td>
+
+                  {published ? <td>Yes</td> : <td>No</td>}
                 </tr>
               )
             )}
