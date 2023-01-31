@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
 
+import { useNavigate } from "react-router-dom";
+
 import Navbar from "./Navbar";
 
 const Home = () => {
   const [data, setData] = useState(null);
+
+  const navigate = useNavigate();
 
   const deletePost = async (e, postid) => {
     e.preventDefault();
@@ -120,7 +124,10 @@ const Home = () => {
                   </td>
                   <td>
                     <span className="icon">
-                      <i className="mdi mdi-24px mdi-pencil"></i>
+                      <i
+                        className="mdi mdi-24px mdi-pencil"
+                        onClick={(e) => navigate(`/edit/${_id}`)}
+                      ></i>
                     </span>
                   </td>
                   <td>
