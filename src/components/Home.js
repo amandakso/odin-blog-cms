@@ -48,9 +48,9 @@ const Home = () => {
             <th>Date</th>
             <th>Title</th>
             <th>Content</th>
-            <th></th>
-            <th></th>
-            <th></th>
+            <th>Preview</th>
+            <th>Edit</th>
+            <th>Delete</th>
             <th>Published?</th>
           </tr>
         </thead>
@@ -79,9 +79,22 @@ const Home = () => {
                   ) : (
                     <td>{content}</td>
                   )}
-                  <td>Preview</td>
-                  <td>Edit</td>
-                  <td>Delete</td>
+                  <td>
+                    <span class="icon">
+                      <i class="mdi mdi-24px mdi-eye"></i>
+                    </span>
+                  </td>
+                  <td>
+                    <span class="icon">
+                      <i class="mdi mdi-24px mdi-pencil"></i>
+                    </span>
+                  </td>
+                  <td>
+                    {" "}
+                    <span class="icon">
+                      <i class="mdi mdi-24px mdi-delete"></i>
+                    </span>
+                  </td>
 
                   {published ? <td>Yes</td> : <td>No</td>}
                 </tr>
