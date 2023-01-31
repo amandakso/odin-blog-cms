@@ -80,19 +80,18 @@ const Home = () => {
                     <td>{content}</td>
                   )}
                   <td>
-                    <span class="icon">
-                      <i class="mdi mdi-24px mdi-eye"></i>
+                    <span className="icon">
+                      <i className="mdi mdi-24px mdi-eye"></i>
                     </span>
                   </td>
                   <td>
-                    <span class="icon">
-                      <i class="mdi mdi-24px mdi-pencil"></i>
+                    <span className="icon">
+                      <i className="mdi mdi-24px mdi-pencil"></i>
                     </span>
                   </td>
                   <td>
-                    {" "}
-                    <span class="icon">
-                      <i class="mdi mdi-24px mdi-delete"></i>
+                    <span className="icon">
+                      <i className="mdi mdi-24px mdi-delete"></i>
                     </span>
                   </td>
 
