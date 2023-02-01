@@ -3,11 +3,24 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Navbar from "./Navbar";
+import PreviewModal from "./PreviewModal";
 
 const Home = () => {
   const [data, setData] = useState(null);
+  const [isActive, setIsActive] = useState(false);
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  const [published, setPublished] = useState(false);
 
   const navigate = useNavigate();
+
+  const toggleModal = () => {
+    if (isActive) {
+      setIsActive(false);
+    } else {
+      setIsActive(true);
+    }
+  };
 
   const deletePost = async (e, postid) => {
     e.preventDefault();
@@ -119,7 +132,15 @@ const Home = () => {
                   )}
                   <td>
                     <span className="icon">
-                      <i className="mdi mdi-24px mdi-eye"></i>
+                      <i
+                        className="mdi mdi-24px mdi-eye"
+                        onClick={() => {
+                          setTitle(title);
+                          setContent(content);
+                          setPublished(published);
+                          toggleModal();
+                        }}
+                      ></i>
                     </span>
                   </td>
                   <td>
@@ -148,6 +169,14 @@ const Home = () => {
           <tbody></tbody>
         )}
       </table>
+      {isActive ? (
+        <PreviewModal
+          title={title}
+          content={content}
+          published={published}
+          toggleModal={toggleModal}
+        />
+      ) : null}
     </div>
   );
 };
