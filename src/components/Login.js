@@ -11,7 +11,7 @@ const Login = () => {
   const loginUser = async (e) => {
     e.preventDefault();
     try {
-      let res = await fetch("http://localhost:3000/blog/login", {
+      let res = await fetch("https://odin-blog-api.onrender.com/blog/login", {
         method: "POST",
         mode: "cors",
         headers: {

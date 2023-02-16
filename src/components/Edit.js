@@ -19,19 +19,22 @@ const Edit = () => {
       alert("Error with user access");
     } else {
       try {
-        let res = await fetch(`http://localhost:3000/blog/posts/${postid}`, {
-          method: "PUT",
-          mode: "cors",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `bearer ${token}`,
-          },
-          body: JSON.stringify({
-            title: title,
-            content: content,
-            published: status,
-          }),
-        });
+        let res = await fetch(
+          `https://odin-blog-api.onrender.com/blog/posts/${postid}`,
+          {
+            method: "PUT",
+            mode: "cors",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `bearer ${token}`,
+            },
+            body: JSON.stringify({
+              title: title,
+              content: content,
+              published: status,
+            }),
+          }
+        );
         let resJson = await res.json();
         if (res.status === 200) {
           if (resJson.msg) {
@@ -56,7 +59,7 @@ const Edit = () => {
       if (postid) {
         try {
           const res = await fetch(
-            `http://localhost:3000/blog/posts/${postid}`,
+            `https://odin-blog-api.onrender.com/blog/posts/${postid}`,
             {
               method: "GET",
               mode: "cors",

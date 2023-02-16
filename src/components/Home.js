@@ -31,14 +31,17 @@ const Home = () => {
     } else {
       if (window.confirm(text)) {
         try {
-          let res = await fetch(`http://localhost:3000/blog/posts/${postid}`, {
-            method: "DELETE",
-            mode: "cors",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `bearer ${token}`,
-            },
-          });
+          let res = await fetch(
+            `https://odin-blog-api.onrender.com/blog/posts/${postid}`,
+            {
+              method: "DELETE",
+              mode: "cors",
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: `bearer ${token}`,
+              },
+            }
+          );
           let resJson = await res.json();
           if (res.status === 200) {
             if (resJson.msg) {
@@ -62,14 +65,17 @@ const Home = () => {
         alert("Error with user access");
       } else {
         try {
-          const res = await fetch(`http://localhost:3000/blog/posts/author`, {
-            method: "GET",
-            mode: "cors",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `bearer ${token}`,
-            },
-          });
+          const res = await fetch(
+            `https://odin-blog-api.onrender.com/blog/posts/author`,
+            {
+              method: "GET",
+              mode: "cors",
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: `bearer ${token}`,
+              },
+            }
+          );
           let resJson = await res.json();
           if (res.status === 200) {
             if (resJson.error) {

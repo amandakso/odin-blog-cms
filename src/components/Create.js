@@ -17,7 +17,7 @@ const Create = () => {
       alert("Error with user access");
     } else {
       try {
-        let res = await fetch("http://localhost:3000/blog/posts", {
+        let res = await fetch("https://odin-blog-api.onrender.com/blog/posts", {
           method: "POST",
           mode: "cors",
           headers: {
