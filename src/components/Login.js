@@ -73,7 +73,7 @@ const Login = () => {
             />
           </div>
         </div>
-        <div className="field is-grouped">
+        <div className="field">
           <div className="control">
             <button className="button" onClick={(e) => loginUser(e)}>
               Login
