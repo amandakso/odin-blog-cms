@@ -53,8 +53,8 @@ const Signup = () => {
   };
 
   return (
-    <div>
-      <h1>Sign Up</h1>
+    <div className="container mt-5 mx-5 px-5">
+      <h1 className="title">Sign Up</h1>
       <form>
         <div className="field">
           <div className="label">Username</div>
