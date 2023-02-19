@@ -52,9 +52,6 @@ const Navbar = () => {
           <Link to={"/"} className="navbar-item">
             Home
           </Link>
-          <Link to={"/"} className="navbar-item">
-            Posts
-          </Link>
         </div>
         <div className="navbar-end">
           <Link to={"/create"} className="navbar-item">
