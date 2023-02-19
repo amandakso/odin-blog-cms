@@ -98,83 +98,85 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      <table className="table is-striped">
-        <caption>Your Posts</caption>
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Title</th>
-            <th>Content</th>
-            <th>Preview</th>
-            <th>Edit</th>
-            <th>Delete</th>
-            <th>Published?</th>
-          </tr>
-        </thead>
-        {data ? (
-          <tbody>
-            {data.map(
-              ({
-                author,
-                title,
-                content,
-                publish_date_formatted,
-                published,
-                updated,
-                updated_formatted,
-                _id,
-              }) => (
-                <tr key={_id}>
-                  <td>{publish_date_formatted}</td>
-                  {title.length > 25 ? (
-                    <td>{title.slice(0, 25)}...</td>
-                  ) : (
-                    <td>{title}</td>
-                  )}
-                  {content.length > 25 ? (
-                    <td>{content.slice(0, 25)}...</td>
-                  ) : (
-                    <td>{content}</td>
-                  )}
-                  <td>
-                    <span className="icon">
-                      <i
-                        className="mdi mdi-24px mdi-eye"
-                        onClick={() => {
-                          setTitle(title);
-                          setContent(content);
-                          setPublished(published);
-                          toggleModal();
-                        }}
-                      ></i>
-                    </span>
-                  </td>
-                  <td>
-                    <span className="icon">
-                      <i
-                        className="mdi mdi-24px mdi-pencil"
-                        onClick={(e) => navigate(`/edit/${_id}`)}
-                      ></i>
-                    </span>
-                  </td>
-                  <td>
-                    <span className="icon">
-                      <i
-                        className="mdi mdi-24px mdi-delete"
-                        onClick={(e) => deletePost(e, _id)}
-                      ></i>
-                    </span>
-                  </td>
+      <div className="container">
+        <table className="table is-striped is-fullwidth">
+          <caption>Your Posts</caption>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Title</th>
+              <th>Content</th>
+              <th>Preview</th>
+              <th>Edit</th>
+              <th>Delete</th>
+              <th>Published?</th>
+            </tr>
+          </thead>
+          {data ? (
+            <tbody>
+              {data.map(
+                ({
+                  author,
+                  title,
+                  content,
+                  publish_date_formatted,
+                  published,
+                  updated,
+                  updated_formatted,
+                  _id,
+                }) => (
+                  <tr key={_id}>
+                    <td>{publish_date_formatted}</td>
+                    {title.length > 25 ? (
+                      <td>{title.slice(0, 25)}...</td>
+                    ) : (
+                      <td>{title}</td>
+                    )}
+                    {content.length > 25 ? (
+                      <td>{content.slice(0, 25)}...</td>
+                    ) : (
+                      <td>{content}</td>
+                    )}
+                    <td>
+                      <span className="icon">
+                        <i
+                          className="mdi mdi-24px mdi-eye"
+                          onClick={() => {
+                            setTitle(title);
+                            setContent(content);
+                            setPublished(published);
+                            toggleModal();
+                          }}
+                        ></i>
+                      </span>
+                    </td>
+                    <td>
+                      <span className="icon">
+                        <i
+                          className="mdi mdi-24px mdi-pencil"
+                          onClick={(e) => navigate(`/edit/${_id}`)}
+                        ></i>
+                      </span>
+                    </td>
+                    <td>
+                      <span className="icon">
+                        <i
+                          className="mdi mdi-24px mdi-delete"
+                          onClick={(e) => deletePost(e, _id)}
+                        ></i>
+                      </span>
+                    </td>
 
-                  {published ? <td>Yes</td> : <td>No</td>}
-                </tr>
-              )
-            )}
-          </tbody>
-        ) : (
-          <tbody></tbody>
-        )}
-      </table>
+                    {published ? <td>Yes</td> : <td>No</td>}
+                  </tr>
+                )
+              )}
+            </tbody>
+          ) : (
+            <tbody></tbody>
+          )}
+        </table>
+      </div>
       {isActive ? (
         <PreviewModal
           title={title}
