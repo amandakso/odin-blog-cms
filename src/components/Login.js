@@ -8,7 +8,15 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  const loginUser = async (e) => {
+  const loginGuest = async (e) => {
+    loginUser(
+      e,
+      process.env.REACT_APP_GUEST_USER,
+      process.env.REACT_APP_GUEST_PWD
+    );
+  };
+
+  const loginUser = async (e, username, password) => {
     e.preventDefault();
     try {
       let res = await fetch("https://odin-blog-api.onrender.com/blog/login", {
@@ -75,13 +83,21 @@ const Login = () => {
         </div>
         <div className="field">
           <div className="control">
-            <button className="button" onClick={(e) => loginUser(e)}>
+            <button
+              className="button"
+              onClick={(e) => loginUser(e, username, password)}
+            >
               Login
             </button>
           </div>
         </div>
       </form>
       {error ? <p>{error}</p> : null}
+      <div>
+        <button className="button" onClick={(e) => loginGuest(e)}>
+          Use Guest Account
+        </button>
+      </div>
       <div>
         Don't have an account? Sign up{" "}
         <Link className="here" to={"/signup"}>
