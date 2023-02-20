@@ -33,7 +33,7 @@ const Navbar = () => {
   return (
     <div className="navbar" role="navigation" aria-label="dropdown navigation">
       <div className="navbar-brand">
-        <button className="navbar-item">CMS</button>
+        <div className="navbar-item">BLOG CMS</div>
         <a
           role="button"
           className="navbar-burger"
