@@ -2,6 +2,13 @@
   text-align: center;
 }
 
+:root {
+  --primary-color: #4a4e69;
+  --secondary-color: #9a8c98;
+  --tertiary-color: #f2e9e4;
+  --black-color: #22223b;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
