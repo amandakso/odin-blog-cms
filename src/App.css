@@ -3,9 +3,10 @@
 }
 
 :root {
-  --primary-color: #4a4e69;
-  --secondary-color: #9a8c98;
-  --tertiary-color: #f2e9e4;
+  --primary-color: #667761;
+  --secondary-color: #545e56;
+  --tertiary-color: #b79492;
+  --white-color: #eae1df;
   --black-color: #22223b;
 }
 
@@ -13,13 +14,13 @@ body {
   margin: 0px;
   padding: 0px;
   height: 100vh;
-  background-color: var(--tertiary-color, white);
+  background-color: var(--tertiary-color, brown);
   color: var(--black-color, black);
 }
 
 .button {
   color: var(--black-color, black);
-  background-color: var(--secondary-color, grey);
+  background-color: var(--tertiary-color, brown);
 }
 
 .App-header {
