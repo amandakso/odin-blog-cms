@@ -42,6 +42,20 @@ label {
   background-color: var(--white-color, white);
 }
 
+.modal-card-head,
+.modal-card-foot {
+  background-color: var(--tertiary-color, brown);
+  color: var(--secondary-color, green);
+}
+
+.delete {
+  background-color: var(--secondary-color, green);
+}
+
+.modal-card-body {
+  background-color: var(--white-color, white);
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100%;
