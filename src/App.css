@@ -14,19 +14,32 @@ body {
   margin: 0px;
   padding: 0px;
   height: 100vh;
-  background-color: var(--tertiary-color, brown);
+  background-color: var(--white-color, white);
   color: var(--black-color, black);
+}
+
+.here {
+  color: var(--primary-color, green);
+}
+
+.label,
+label {
+  color: var(--primary-color, green);
 }
 
 .navbar,
 .navbar-menu {
-  background-color: var(--primary-color, brown);
+  background-color: var(--primary-color, green);
   color: var(--black-color, black);
 }
 
 .button {
   color: var(--black-color, black);
   background-color: var(--tertiary-color, brown);
+}
+
+.table {
+  background-color: var(--white-color, white);
 }
 
 .App-header {

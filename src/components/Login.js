@@ -83,7 +83,10 @@ const Login = () => {
       </form>
       {error ? <p>{error}</p> : null}
       <div>
-        Don't have an account? Sign up <Link to={"/signup"}>HERE</Link>
+        Don't have an account? Sign up{" "}
+        <Link className="here" to={"/signup"}>
+          HERE
+        </Link>
       </div>
     </div>
   );

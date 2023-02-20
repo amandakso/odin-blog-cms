@@ -105,8 +105,11 @@ const Signup = () => {
         </ul>
       ) : null}
       <div>
-        Already have an account? Click <Link to={"/login"}>HERE</Link> to log
-        in.
+        Already have an account? Click{" "}
+        <Link className="here" to={"/login"}>
+          HERE
+        </Link>{" "}
+        to log in.
       </div>
     </div>
   );
