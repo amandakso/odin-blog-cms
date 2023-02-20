@@ -46,7 +46,7 @@ const Login = () => {
   };
 
   return (
-    <div className="container mt-5 mx-5 px-5">
+    <div className="container pt-5 mx-5 px-5">
       <h1 className="title">Login</h1>
       <form>
         <div className="field">
