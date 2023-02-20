@@ -18,6 +18,12 @@ body {
   color: var(--black-color, black);
 }
 
+.navbar,
+.navbar-menu {
+  background-color: var(--primary-color, brown);
+  color: var(--black-color, black);
+}
+
 .button {
   color: var(--black-color, black);
   background-color: var(--tertiary-color, brown);
