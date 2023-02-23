@@ -7,7 +7,7 @@ const NotFound = () => {
   return (
     <div>
       <h1>Page Not Found</h1>
-      <img src={error} alt="Pug wrapped in a blanket" />;
+      <img src={error} alt="Sad face drawn on an egg in an egg carton" />;
       <p>
         Photo by{" "}
         <a href="https://unsplash.com/@helloimnik?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
