@@ -106,7 +106,7 @@ const Signup = () => {
       ) : null}
       <div>
         Already have an account? Click{" "}
-        <Link className="here" to={"/login"}>
+        <Link className="here" to={"/odin-blog-cms/login"}>
           HERE
         </Link>{" "}
         to log in.

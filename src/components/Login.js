@@ -45,7 +45,7 @@ const Login = () => {
           setError(null);
           sessionStorage.setItem("token", resJson.token);
           alert(`Welcome ${resJson.username}!`);
-          navigate("/");
+          navigate("/odin-blog-cms/");
         }
       }
     } catch (err) {
@@ -100,7 +100,7 @@ const Login = () => {
       </div>
       <div>
         Don't have an account? Sign up{" "}
-        <Link className="here" to={"/signup"}>
+        <Link className="here" to={"/odin-blog-cms/signup"}>
           HERE
         </Link>
       </div>

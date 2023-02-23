@@ -16,14 +16,20 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<PrivateRoute child={<Home />} />} />
-          <Route path="/create" element={<PrivateRoute child={<Create />} />} />
           <Route
-            path="/edit/:postid"
+            path="/odin-blog-cms/"
+            element={<PrivateRoute child={<Home />} />}
+          />
+          <Route
+            path="/odin-blog-cms/create"
+            element={<PrivateRoute child={<Create />} />}
+          />
+          <Route
+            path="/odin-blog-cms/edit/:postid"
             element={<PrivateRoute child={<Edit />} />}
           />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
+          <Route path="/odin-blog-cms/login" element={<Login />} />
+          <Route path="/odin-blog-cms/signup" element={<Signup />} />
         </Routes>
       </BrowserRouter>
     </div>

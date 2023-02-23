@@ -24,7 +24,7 @@ const Navbar = () => {
       sessionStorage.removeItem("token");
       sessionStorage.clear();
       alert(resJson.msg);
-      navigate("/login");
+      navigate("/odin-blog-cms/login");
     } catch (err) {
       console.log(err);
     }
@@ -49,12 +49,12 @@ const Navbar = () => {
       </div>
       <div id="navbarMenuItems" className="navbar-menu">
         <div className="navbar-start">
-          <Link to={"/"} className="navbar-item">
+          <Link to={"/odin-blog-cms/"} className="navbar-item">
             Home
           </Link>
         </div>
         <div className="navbar-end">
-          <Link to={"/create"} className="navbar-item">
+          <Link to={"/odin-blog-cms/create"} className="navbar-item">
             Create Post
           </Link>
           <div className="navbar-item">

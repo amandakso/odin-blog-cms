@@ -40,7 +40,7 @@ const Edit = () => {
           if (resJson.msg) {
             alert(resJson.msg);
           }
-          navigate("/");
+          navigate("/odin-blog-cms/");
         } else {
           console.log("An error occurred");
         }

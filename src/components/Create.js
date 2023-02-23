@@ -42,7 +42,7 @@ const Create = () => {
           if (resJson.message) {
             alert(resJson.message);
             setErrors(null);
-            navigate("/");
+            navigate("/odin-blog-cms/");
           }
         } else {
           console.log("An error occurred");
