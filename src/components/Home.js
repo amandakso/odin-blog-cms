@@ -154,7 +154,9 @@ const Home = () => {
                       <span className="icon">
                         <i
                           className="mdi mdi-24px mdi-pencil"
-                          onClick={(e) => navigate(`/edit/${_id}`)}
+                          onClick={(e) =>
+                            navigate(`/odin-blog-cms/edit/${_id}`)
+                          }
                         ></i>
                       </span>
                     </td>

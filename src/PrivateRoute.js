@@ -9,7 +9,7 @@ const PrivateRoute = (props) => {
   if (isLoggedIn) {
     return child;
   }
-  return <Navigate replace={true} to="/login" />;
+  return <Navigate replace={true} to="/odin-blog-cms/login" />;
 };
 
 export default PrivateRoute;
