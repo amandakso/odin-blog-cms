@@ -1,12 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-import Navbar from "./Navbar";
 import error from "../assets/error.jpg";
 
 const NotFound = () => {
   return (
     <div>
-      <Navbar />
       <h1>Page Not Found</h1>
       <img src={error} alt="Pug wrapped in a blanket" />;
       <p>
@@ -15,6 +14,12 @@ const NotFound = () => {
           Nik
         </a>{" "}
         on <a href="https://unsplash.com/photos/LUYD2b7MNrg">Unsplash</a>
+      </p>
+      <p>
+        Return home{" "}
+        <Link className="here" to={"/odin-blog-cms/"}>
+          HERE
+        </Link>
       </p>
     </div>
   );
