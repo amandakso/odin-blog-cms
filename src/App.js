@@ -9,6 +9,7 @@ import Home from "./components/Home";
 import Create from "./components/Create";
 import Edit from "./components/Edit";
 import Login from "./components/Login";
+import NotFound from "./components/NotFound";
 import Signup from "./components/Signup";
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           />
           <Route path="/odin-blog-cms/login" element={<Login />} />
           <Route path="/odin-blog-cms/signup" element={<Signup />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </div>
