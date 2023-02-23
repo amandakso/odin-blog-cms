@@ -99,6 +99,13 @@ const Create = () => {
           </div>
         </div>
       </form>
+      {errors ? (
+        <ul>
+          {errors.map((item, index) => (
+            <li key={index}>{item.msg}</li>
+          ))}
+        </ul>
+      ) : null}
     </div>
   );
 };
